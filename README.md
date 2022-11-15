@@ -25,7 +25,8 @@ Looking at the overall demographics of the data, we can assess the customer demo
 3.2 EDA on Offer portfolio and transcript data
 ---
 Most Starbucks sales within the 30 days period were from non-promotional transactions, while about 20.5% of promotional offers directly induced Starbucks sales. The Completion Rate is defined as the number of completed offers divided by the number of offers received. Those who joined in 2016 have the highest completion rate (Exhibit 9). (Exhibit 10) reveals offer G performs the best, which is a discount offer sent out through the web. Email, mobile, social, and informational offers have no completion rates suggesting that these are not lucrative. (Exhibit 11) shows that using all four channels will give the highest completion rate. Across the 30-day pilot run, it was found that there are six peaks of events (Exhibit 13) suggesting higher activity on certain days. (Exhibit 14) A high correlation between completed target and duration was seen, suggesting that offers with high duration have a longer influence on members.
-[图片]
+
+![Pictures in Readme/3.2.png](https://github.com/Lululucile/Improving-Starbucks-Promotion/blob/main/Pictures%20in%20Readme/3.2.png)
 
 3.3 Customer segmentation based on K-means
 ---
@@ -34,7 +35,8 @@ For clustering, additional metrics as number of offers viewed and number of tran
 
 ### 3.3.2 Interpretation based on customer behaviors and suggestion
 Based on the results (Exhibit 15-2): Cluster 1 (Promotion seekers- 23%) with high completion rate and average amount spend; Cluster 2 (Non-target group- 12%) with lowest completion rate and low spend; Cluster 3 (High Value customers- 17%) with highest spend and average completion rate; Cluster 4 (Offer viewers- 26%) with highest view rate but low completion rate; Cluster 5 (Frugal - 2%) with high number of transactions but of very small amounts; Cluster 6 (Regular customers- 20%) with average completion rate and medium/low spend; Based on cluster level view, Starbucks should focus on “Offer viewers” who engage with the campaign but don’t see value in the promotions. Additionally, using the devised models, Starbucks would be able to increase completion rates for “Promotion seekers” and “high value customers”. More details on demographics and standardized comparison by cluster in (Exhibit 15-2).
-[图片]
+
+![Pictures in Readme/3.3.png](https://github.com/Lululucile/Improving-Starbucks-Promotion/blob/main/Pictures%20in%20Readme/3.3.png)
 
 ### 3.4 Principal Component Analysis
 PCA suggested 3 factors explaining the variation in data. The first factor details more discountoriented deals with high duration, the second factor explains value deals that earn high rewards, and the third factor explains loyalty ie. high interactions, and spending at Starbucks. Graphs for the analysis on Exhibit 21.
@@ -75,7 +77,7 @@ __Three metrics were captured for comparison:__
 
 Logistic regression with interaction using lasso, Logistic regression with interaction using post lasso, and random forest showed very similar accuracy across the 10 folds. In an ideal scenario, models with higher accuracy on all three metrics would be chosen for test data. We chose the Random Forest model as the best-suited model for the problem at hand and achieved 88% accuracy on test data at 0.5 threshold with 66% R square, and 83% of closeness to the actual value.
 
-[图片]
+![Pictures in Readme/5.png](https://github.com/Lululucile/Improving-Starbucks-Promotion/blob/main/Pictures%20in%20Readme/5.png)
 
 Above graphs show the ROC curve and box plots of 10 cross validations across the three metrics. Exhibit 21 has bar graphs that includes the null model (baseline) for comparison.
 
@@ -86,11 +88,12 @@ __How will the model be used?__ The developed model can be used by Starbucks to 
 
 Moreover, Cumulative response and lift curves can be used for effective targetingCR curve states that by targeting 40% of members, Starbucks can target 80% of potential customers, and lift curve states a similar approach by showing that if Starbucks targets 40% of customers, then lift of 2 can be achieved ie. can achieve twice as more potential customers than average.
 
-[图片]
+![Pictures in Readme/6.1.png](https://github.com/Lululucile/Improving-Starbucks-Promotion/blob/main/Pictures%20in%20Readme/6.1.png)
 
 __Issues and Assumptions__- However, before deploying the model, Starbucks should be aware that there was no information provided if customers would buy from Starbucks irrespective of whether a promotion was provided or not. There will be an underlying bias for those customers who are regular customers and would have gone to Starbucks even without the promotion. Previous transaction history is needed to understand how much “additional” revenue was gained from the marketing campaign. Additionally, the costs of each promotion are required to understand the profitability of each offer to provide remarks on the profit side. Since this information was missing, the current model focuses on maximizing revenue.
 
 __Ethical considerations__ - There might be implications in using customer data for targeting promotion sensitive groups. In current data privacy norms, Starbucks may require further customer consent to use their transaction and demographic details for offers and targeted marketing to abide by data laws and follow ethical standards.
 
 __Risks associated__ - Under the business context, models that help mitigate missed opportunities and lower marketing costs are the best while correctly predicting the probability of completion. From the above graph, as the threshold is changed, there is a tradeoff between True Positive Rate and False Positive Rate. If it is discovered that cost of targeting is greater than the missed opportunity (i.e., not targeting a potential customer), then Starbucks should increase the threshold to greater than 0.5, so to decrease the False positive. Similarly, if costs of targeting are lower than the missed opportunity cost, then Starbucks can reduce the threshold from 0.5 to decrease False Negatives (i.e., decrease missed opportunities). Since there is not enough information on the costs, adjusting the threshold (currently at 0.5) to account for the tradeoff between false negatives and false positives cannot be addressed at this moment.
-[图片]
+
+![Pictures in Readme/6.2.png](https://github.com/Lululucile/Improving-Starbucks-Promotion/blob/main/Pictures%20in%20Readme/6.2.png)
